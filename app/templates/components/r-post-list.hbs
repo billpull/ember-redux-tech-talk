@@ -1,0 +1,9 @@
+<form {{action 'submit' subreddit on='submit'}}>
+    <label>
+        Subreddit: {{input value=subreddit}}
+    </label>
+    <button>Display Posts</button>
+</form>
+{{#each posts as |post|}}
+    {{r-post model=post}}
+{{/each}}
