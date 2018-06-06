@@ -1,0 +1,31 @@
+import Ember from 'ember';
+import hbs from 'htmlbars-inline-precompile';
+import { connect } from 'ember-redux';
+import fetch from 'fetch';
+
+import { fetchPosts, savePost } from 'redux-demo/actions/posts';
+
+const stateToComputed = (state) => {
+  return {
+    posts: state.posts,
+    savedPosts: state.savedPosts,
+    savedPostCount: state.savedPostCount
+  };
+};
+
+const dispatchToActions = {
+    fetchPosts,
+    savePost
+}
+
+const PostListContainer = Ember.Component.extend({
+  tagName: '',
+  layout: hbs`
+    {{yield posts savedPosts savedPostCount (action 'fetchPosts') (action 'savePost')}}
+  `
+});
+
+export default connect(
+  stateToComputed,
+  dispatchToActions
+)(PostListContainer);
