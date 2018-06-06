@@ -1,8 +1,12 @@
-<h2>Saved Posts #{{savedPostCount}}</h2>
-<ul>
-    {{#each savedPosts as |post|}}
-        <li>{{post.title}}</li>
-    {{/each}}
-</ul>
-{{r-post-list}}
+{{#post-container as |posts savedPosts savedPostCount fetchPosts savePost|}}
+    <h2>Saved Posts #{{savedPostCount}}</h2>
+    <ul>
+        {{#each savedPosts as |post|}}
+            <li>{{post.title}}</li>
+        {{/each}}
+    </ul>
+    {{r-post-list posts=posts fetchPosts=fetchPosts savePost=savePost}}
+{{/post-container}}
+
+
 {{outlet}}

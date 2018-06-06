@@ -1,4 +1,4 @@
-<form {{action 'submit' subreddit on='submit'}}>
+<form {{action fetchPosts subreddit on='submit'}}>
     <label>
         Subreddit: {{input value=subreddit}}
     </label>
@@ -6,6 +6,6 @@
 </form>
 <ul>
     {{#each posts as |post|}}
-        {{r-post model=post}}
+        {{r-post model=post savePost=savePost}}
     {{/each}}
 </ul>

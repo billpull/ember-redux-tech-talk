@@ -1,7 +1,6 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import hbs from 'htmlbars-inline-precompile';
 import { connect } from 'ember-redux';
-import fetch from 'fetch';
 
 import { fetchPosts, savePost } from 'redux-demo/actions/posts';
 
@@ -18,7 +17,7 @@ const dispatchToActions = {
     savePost
 }
 
-const PostListContainer = Ember.Component.extend({
+const PostListContainer = Component.extend({
   tagName: '',
   layout: hbs`
     {{yield posts savedPosts savedPostCount (action 'fetchPosts') (action 'savePost')}}
