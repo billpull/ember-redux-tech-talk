@@ -4,6 +4,8 @@
     </label>
     <button>Display Posts</button>
 </form>
-{{#each posts as |post|}}
-    {{r-post model=post}}
-{{/each}}
+<ul>
+    {{#each posts as |post|}}
+        {{r-post model=post}}
+    {{/each}}
+</ul>

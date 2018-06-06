@@ -1,2 +1,8 @@
+<h2>Saved Posts #{{savedPostCount}}</h2>
+<ul>
+    {{#each savedPosts as |post|}}
+        <li>{{post.title}}</li>
+    {{/each}}
+</ul>
 {{r-post-list}}
 {{outlet}}

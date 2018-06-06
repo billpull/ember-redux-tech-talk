@@ -3,7 +3,7 @@ import { inject as service } from '@ember/service';
 import { get, set } from '@ember/object';
 
 export default Component.extend({
-    posts: [],
+    posts: null,
     subreddit: '',
 
     reddit: service(),
