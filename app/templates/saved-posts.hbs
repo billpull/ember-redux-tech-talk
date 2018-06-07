@@ -1,0 +1,6 @@
+{{#post-container as |posts savedPosts savedPostCount fetchPosts savePost|}}
+    <h1>Saved Posts #{{savedPostCount}}</h1>
+    {{#each savedPosts as |post|}}
+        {{r-post model=post savePost=savePost}}
+    {{/each}}
+{{/post-container}}

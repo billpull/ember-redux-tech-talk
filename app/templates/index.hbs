@@ -1,0 +1,10 @@
+<h1>Home</h1>
+{{#post-container as |posts savedPosts savedPostCount fetchPosts savePost|}}
+    {{#link-to 'saved-posts'}}Saved Posts #{{savedPostCount}}{{/link-to}}
+    <ul>
+        {{#each savedPosts as |post|}}
+            <li>{{post.title}}</li>
+        {{/each}}
+    </ul>
+    {{r-post-list posts=posts fetchPosts=fetchPosts savePost=savePost}}
+{{/post-container}}
